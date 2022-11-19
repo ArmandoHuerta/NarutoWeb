@@ -39,7 +39,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Imagnes</a>
+                <a class="nav-link" href="#">Imagenes</a>
               </li>
             </ul>
             <form class="d-flex">
@@ -58,8 +58,17 @@
     </header>
 
     <section>
-      <img src="naruto2.jpg" alt="Girl in a jacket" width="600" height="400" />
-      <img src="akatsuki.jpg" alt="Girl in a jacket" width="600" height="400" />
+      <img src="naruto2.jpg" alt="Girl in a jacket" class="w-25 d-flex justify-content-between"  />
+      <img src="akatsuki.jpg" alt="Girl in a jacket" class="w-25 d-flex" />
+      
+      <form action="/action_page.php" class="w-25 d-flex">
+        <label for="fname">Nombre:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Apellidos:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+        <input type="submit" value="Submit">
+      </form> 
+     
     </section>
 
     <script
