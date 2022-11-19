@@ -42,33 +42,45 @@
                 <a class="nav-link" href="#">Imagenes</a>
               </li>
             </ul>
-            <form class="d-flex">
-              <input
-                class="form-control me-sm-2"
-                type="text"
-                placeholder="Search"
-              />
-              <button class="btn btn-secondary my-2 my-sm-0" type="submit">
-                Search
-              </button>
-            </form>
           </div>
         </div>
       </nav>
     </header>
 
-    <section>
-      <img src="naruto2.jpg" alt="Girl in a jacket" class="w-25 d-flex justify-content-between"  />
-      <img src="akatsuki.jpg" alt="Girl in a jacket" class="w-25 d-flex" />
-      
-      <form action="/action_page.php" class="w-25 d-flex">
-        <label for="fname">Nombre:</label><br>
-        <input type="text" id="fname" name="fname" value="John"><br>
-        <label for="lname">Apellidos:</label><br>
-        <input type="text" id="lname" name="lname" value="Doe"><br><br>
-        <input type="submit" value="Submit">
-      </form> 
-     
+    <section class="d-flex w-100">
+      <div class="w-50 p-2">
+        <img src="akatsuki.jpg" alt="Girl in a jacket" class="img-fluid" />
+      </div>
+
+      <div class="w-50 d-flex flex-column align-items-center p-2">
+        <img
+          src="naruto2.jpg"
+          alt="Girl in a jacket"
+          class="img-fluid justify-content-between"
+        />
+
+        <form action="/action_page.php" class="d-flex flex-column p-4">
+          <div class="p-2">
+            <label for="fname">Nombre:</label><br />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value="Escribe tu nombre"
+            /><br />
+          </div>
+
+          <div class="p-2">
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Elige tu clan</option>
+              <option value="uchiha">Uchiha</option>
+              <option value="uzumaki">Uzumaki</option>
+              <option value="hyuga">Hyuga</option>
+            </select>
+          </div>
+          <input type="submit" value="Guardar" class="align-self-center" />
+        </form>
+      </div>
     </section>
 
     <script
