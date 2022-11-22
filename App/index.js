@@ -6,9 +6,12 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(express.static("frontend"));
 
 app.post("/api", function (req, res) {
-  const { clanName } = req.body;
+  console.log(req.body);
+
+  const { username, clanName } = req.body;
 
   const clanes = {
     Uchiha:
@@ -24,9 +27,10 @@ app.post("/api", function (req, res) {
   if (clanName == "Hyuga") clanDescripcion = clanes.Hyuga;
 
   res
-    .cookie("clanSeleccionado", clanDescripcion)
-    .cookie("clanDescripcion")
-    .redirect("/frontend/resultado");
+    .cookie("username", username)
+    .cookie("clanSeleccionado", clanName)
+    .cookie("clanDescripcion", clanDescripcion)
+    .redirect("/tablero.html");
 });
 
 app.listen(6369);
