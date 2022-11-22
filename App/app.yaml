@@ -1,0 +1,15 @@
+# NodeJS Runtime version
+runtime: nodejs16
+
+# Service name (used for dispatch.yaml)
+service: default
+
+instance_class: B1
+
+basic_scaling:
+  max_instances: 2
+
+handlers:
+  - url: /.*
+    secure: always
+    script: auto
