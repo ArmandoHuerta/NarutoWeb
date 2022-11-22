@@ -9,10 +9,13 @@ app.use(cookieParser());
 
 app.post("/api", function (req, res) {
   const { clanName } = req.body;
-  console.log("Cookies: ", JSON.stringify(req.cookies));
-  console.log("CLAN: " + clanName);
 
-  res.send("Hello Yeyo V1 ");
+  const clanes = {
+    Uchiha: "Description",
+    Clan2: "Description2",
+  };
+
+  res.cookie("clanSeleccionado", clanName).redirect("/frontend/resultado");
 });
 
 app.listen(6369);
