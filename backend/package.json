@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Naruto Web API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArmandoHuerta/NarutoWeb.git#narutoweb"
+  },
+  "author": "Sergio Armando Huerta Hernández",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArmandoHuerta/NarutoWeb/issues"
+  },
+  "homepage": "https://github.com/ArmandoHuerta/NarutoWeb/tree/narutoweb#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
