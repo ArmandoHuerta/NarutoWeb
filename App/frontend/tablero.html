@@ -15,7 +15,9 @@
   <body>
     <div class="bg-primary">
       <header class="d-flex justify-content-between bg-secondary">
-        <img src="img/naruto.png" alt="Girl in a jacket" class="bg-secondary" />
+        <a href="index.html" class="w-25">
+          <img src="img/naruto.png" class="w-50" />
+        </a>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <div class="container-fluid">
@@ -63,34 +65,46 @@
             alt="Girl in a jacket"
             class="img-fluid justify-content-between"
           />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
+          <div class="card-body d-flex flex-column align-items-center">
+            <h5 class="card-title text-center p-2" id="clanName">Card title</h5>
+            <p class="card-text" id="clanDescripcion">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
+            <img src="" class="w-25" id="clanImage" />
           </div>
         </div>
       </section>
       <script>
         function getCookie(cname) {
-     let name = cname + "=";
-     let decodedCookie = decodeURIComponent(document.cookie);
-     let ca = decodedCookie.split(';');
-     for(let i = 0; i <ca.length; i++) {
-       let c = ca[i];
-       while (c.charAt(0) == ' ') {
-         c = c.substring(1);
-       }
-       if (c.indexOf(name) == 0) {
-         return c.substring(name.length, c.length);
-       }
-     }
-     return "";
-   }
-   console.log(getCookie("username"));
-         </script>
-       
+          let name = cname + "=";
+          let decodedCookie = decodeURIComponent(document.cookie);
+          let ca = decodedCookie.split(";");
+          for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == " ") {
+              c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+            }
+          }
+          return "";
+        }
+
+        // Set values from cookies
+        document.getElementById("clanName").innerHTML =
+          getCookie("username") +
+          " ha seleccionado el clan " +
+          getCookie("clanSeleccionado");
+
+        document.getElementById("clanDescripcion").innerHTML =
+          getCookie("clanDescripcion");
+
+        document
+          .getElementById("clanImage")
+          .setAttribute("src", "img/" + getCookie("clanSeleccionado") + ".png");
+      </script>
 
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
