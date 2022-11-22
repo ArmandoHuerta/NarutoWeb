@@ -1,6 +1,8 @@
 const express = require("express");
 var cookieParser = require("cookie-parser");
+require("dotenv").config();
 
+const { PORT } = process.env;
 const app = express();
 
 app.use(express.json());
@@ -33,4 +35,4 @@ app.post("/api", function (req, res) {
     .redirect("/tablero.html");
 });
 
-app.listen(6369);
+app.listen(PORT);
